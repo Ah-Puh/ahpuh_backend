@@ -13,8 +13,9 @@ exports.retrieveTutorDetail = async function (tutorId, day) {
     const tutorResult = await tutorDao.selectTutorById(connection, tutorId);
     const lectureResult = await tutorDao.selectLectureByTutorId(connection, selectLectureParams);
     const tutorTagResult = await tutorDao.selectTutorTagById(connection, tutorId);
+    const tags = tutorTagResult[0].map(({ name }) => name);
 
-    const result = {"tutor" : tutorResult[0], "tutorTag" : tutorTagResult[0], "lectures" : lectureResult[0]};
+    const result = {"tutor" : tutorResult[0], "tutorTag" : tags, "lectures" : lectureResult[0]};
 
     connection.release();
 
