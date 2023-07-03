@@ -20,9 +20,16 @@
   "homepage": "https://github.com/Ah-Puh/backend#readme",
   "dependencies": {
     "axios": "^1.4.0",
+<<<<<<< HEAD
     "cors": "^2.8.5",
+=======
+    "bcrypt": "^5.1.0",
+>>>>>>> BE11
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.0",
     "mysql2": "^3.4.3",
     "request": "^2.88.2"
   },
