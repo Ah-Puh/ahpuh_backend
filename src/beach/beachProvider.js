@@ -13,7 +13,7 @@ const beachProvider = {
 
   getBeachesByKeyword: async (keyword) => {
     const connection = await pool.getConnection(async (pool) => pool);
-    const [beaches] = await beachDao.selectBeachesByKeyword(connection, keyword);
+    const beaches = await beachDao.selectBeachesByKeyword(connection, keyword);
 
     connection.release();
 
