@@ -4,9 +4,6 @@ export async function findByEmail(connection, email) {
     return x;
   }
   
-  export async function findById(id) {
-    return users.find((user) => user.id === id);    
-  }
   
   export async function createUser(connection, user) {
     const {email, password, name, phone} = user;
