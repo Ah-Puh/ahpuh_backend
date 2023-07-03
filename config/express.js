@@ -4,11 +4,13 @@ import tutorRouter from "../src/tutor/tutorRouter";
 import dayRouter from "../src/day/dayRouter";
 import reservationRouter from "../src/reservation/reservationRouter";
 import lectureRouter from "../src/lecture/lectureRouter";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use("/beach", beachRouter);
 app.use("/tutor", tutorRouter);
