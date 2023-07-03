@@ -1,16 +1,17 @@
+import { response } from "../../config/response";
+import beachProvider from "./beachProvider";
+
 const beachController = {
   getBeaches: async (req, res) => {
     const {
       query: { keyword },
     } = req;
 
-    console.log(keyword);
-
     if (keyword) {
-      return res.json("good");
+      return res.json(response(await beachProvider.getBeachesByKeyword(keyword)));
     }
 
-    return res.json("goodgood");
+    return res.json(response(await beachProvider.getAllBeaches()));
   },
 };
 

@@ -3,8 +3,6 @@ import beachController from "./beachController";
 
 const beachRouter = express.Router();
 
-beachRouter.get("/", (req, res) => {
-  return res.send("hi");
-});
+beachRouter.get("/", beachController.getBeaches);
 
 export default beachRouter;
