@@ -3,15 +3,19 @@ import beachProvider from "./beachProvider";
 
 const beachController = {
   getBeaches: async (req, res) => {
-    const {
-      query: { keyword },
-    } = req;
+    try {
+      const {
+        query: { keyword },
+      } = req;
 
-    if (keyword) {
-      return res.json(response(await beachProvider.getBeachesByKeyword(keyword)));
+      if (keyword) {
+        return res.json(response(await beachProvider.getBeachesByKeyword(keyword)));
+      }
+
+      return res.json(response(await beachProvider.getAllBeaches()));
+    } catch (error) {
+      console.log(error);
     }
-
-    return res.json(response(await beachProvider.getAllBeaches()));
   },
 };
 

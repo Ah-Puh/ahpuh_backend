@@ -9,10 +9,14 @@ exports.postReservation = async function (req, res) {
   /**
    * Query: personnel
    */
-  const { personnel } = req.query;
-  const lectureId = req.params.lecture_id;
-  const userId = 1;
-  const reservationResponse = await reservationService.createReservation(userId, lectureId, personnel);
+  try {
+    const { personnel } = req.query;
+    const lectureId = req.params.lecture_id;
+    const userId = 1;
+    const reservationResponse = await reservationService.createReservation(userId, lectureId, personnel);
 
-  return res.json(response({ reservationId: reservationResponse }));
+    return res.json(response({ reservationId: reservationResponse }));
+  } catch (error) {
+    console.log(error);
+  }
 };
