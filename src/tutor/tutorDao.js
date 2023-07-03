@@ -41,7 +41,7 @@ const tutorDao = {
   selectLectureByTutorId: async (connection, selectLectureParams) => {
     const {tutorId, day} = selectLectureParams;
     const selectLectureByIdQuery = `
-        SELECT lecture_id, tutor, TIME(start_time), level, price 
+        SELECT lecture_id, tutor, TIME(start_time) AS start_time, level, price 
         FROM lectures 
         WHERE tutor = ? AND DATE(start_time) = ?;
     `;
