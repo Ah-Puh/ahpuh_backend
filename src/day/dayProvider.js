@@ -17,7 +17,6 @@ export const surfingIndex = async (req) => {
     const {time:time2, swell_wave_height_max:wave_height, swell_wave_direction_dominant:wave_direction, swell_wave_period_max:wave_period} = params2.data.daily;
     
     const res = {time:time, index: await carcIndex(lat, lon, temperature, rain_sum, windspeed, wind_direction, wave_height, wave_direction, wave_period)};
-    console.log(res);
     return res;
 }
 
