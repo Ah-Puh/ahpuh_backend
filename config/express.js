@@ -3,6 +3,7 @@ import beachRouter from "../src/beach/beachRouter";
 import tutorRouter from "../src/tutor/tutorRouter";
 import dayRouter from "../src/day/dayRouter";
 import reservationRouter from "../src/reservation/reservationRouter";
+import lectureRouter from "../src/lecture/lectureRouter";
 
 const app = express();
 
@@ -13,5 +14,5 @@ app.use("/beach", beachRouter);
 app.use("/tutor", tutorRouter);
 app.use("/day", dayRouter);
 app.use("/reservation", reservationRouter);
-
+app.use("/lecture", lectureRouter);
 export default app;
