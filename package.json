@@ -1,0 +1,29 @@
+{
+  "name": "ah-puh-backend",
+  "version": "1.0.0",
+  "description": "4th UMC Hackerton Ah-Puh Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ah-Puh/backend.git"
+  },
+  "author": "Ah-Puh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ah-Puh/backend/issues"
+  },
+  "homepage": "https://github.com/Ah-Puh/backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/preset-env": "^7.22.5"
+  }
+}
