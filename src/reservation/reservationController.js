@@ -6,18 +6,13 @@ import { response } from "../../config/response";
  * [POST] /reservation/:lecture_id
  */
 exports.postReservation = async function (req, res) {
+  /**
+   * Query: personnel
+   */
+  const { personnel } = req.query;
+  const lectureId = req.params.lecture_id;
+  const userId = 1;
+  const reservationResponse = await reservationService.createReservation(userId, lectureId, personnel);
 
-    /**
-     * Body: personnel
-     */
-    const {personnel} = req.body;
-    const lectureId = req.params.lecture_id;
-    const userId = 1;
-    const reservationResponse = await reservationService.createReservation(
-        userId,
-        lectureId,
-        personnel
-    );
-
-    return res.json(response({reservationId : reservationResponse}));
+  return res.json(response({ reservationId: reservationResponse }));
 };
