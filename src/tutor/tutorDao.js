@@ -29,6 +29,13 @@ const tutorDao = {
 
     return queryResult;
   },
+  selectLevels: async (connection, tutorId) => {
+    const sql = `select distinct level from lectures where tutor = ${tutorId}`;
+
+    const [queryResult] = await connection.query(sql);
+
+    return queryResult;
+  },
 };
 
 export default tutorDao;

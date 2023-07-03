@@ -10,7 +10,9 @@ const tutorService = {
     tutors = await Promise.all(
       tutors_raw.map(async ({ tutor_id: id, name }) => {
         const tags = await tutorDao.selectTutorTags(connection, id);
-        return { id, name, tags };
+        let levels = await tutorDao.selectLevels(connection, id);
+        levels = levels.map(({ level }) => level);
+        return { id, name, tags, levels };
       })
     );
 
